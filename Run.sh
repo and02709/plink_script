@@ -64,7 +64,7 @@ echo "minor allele frequency: $maf"
 
 mkdir maf_files
 
-sbatch --time 1:00:00 --mem 8GB --array 1-22 --wait -N1 maf_individual.sh ${wd} ${file} ${maf}
+# sbatch --time 1:00:00 --mem 8GB --array 1-22 --wait -N1 maf_individual.sh ${wd} ${file} ${maf}
 
 
 exit 0
