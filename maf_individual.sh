@@ -16,6 +16,6 @@ CHR=$SLURM_ARRAY_TASK_ID
 
 module load singularity
 
-cd $WORK/maf_files
+cd $WORK
 
 singularity exec my_image.sif plink --bfile $file --chr $CHR --maf $MAF --make-bed --out maf_${CHR}
