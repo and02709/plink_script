@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo "Hello, World!"
+echo "Beginning plink sequence"
+
+plink --version
