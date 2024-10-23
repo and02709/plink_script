@@ -44,7 +44,7 @@ echo "minor allele frequency: $maf"
 
 mkdir maf_files
 
-sbatch --time 0:10:00 --mem 2GB --array 1-22 --wait -N1 maf_individual.sh ${file} ${maf}
+sbatch --time 0:10:00 --mem 2GB --array 1-22 --wait -N1 /plink_script/maf_individual.sh ${file} ${maf}
 
 
 exit 0
