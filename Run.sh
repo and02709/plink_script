@@ -1,7 +1,7 @@
 #!/bin/bash
 
-$file=$1
-$maf=$2
+$file=SMILES_GDA
+$maf=0.01
 
 echo "input file name: $file"
 echo "minor allele frequency: $maf"
