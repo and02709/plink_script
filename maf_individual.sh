@@ -9,13 +9,10 @@
 #SBATCH -e rfmix_%a.err
 #SBATCH --job-name rfmix
 
-WD=$1
-FILE=$2
-MAF=$3
+FILE=$1
+MAF=$2
 CHR=$SLURM_ARRAY_TASK_ID
 
 module load singularity
 
-cd $WORK/maf_files
-
-singularity exec my_image.sif plink --bfile $file --chr $CHR --maf $MAF --make-bed --out maf_${CHR}
+singularity exec plink.sif plink --bfile /input/$file --chr $CHR --maf $MAF --make-bed --out /output/maf_${CHR}
