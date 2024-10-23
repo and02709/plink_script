@@ -1,15 +1,4 @@
 #!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=2GB
-#SBATCH --time=1:00:00
-#SBATCH -p msismall
-#SBATCH --mail-type=FAIL  
-#SBATCH --mail-user=and02709@umn.edu 
-#SBATCH -o MAF.out
-#SBATCH -e MAF.err
-#SBATCH --job-name MAF
 
 
 # Check for command line arguments
