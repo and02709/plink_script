@@ -62,6 +62,7 @@ echo "input file name: $file"
 echo "minor allele frequency: $maf"
 
 # Make output directory
+cd $wd
 mkdir maf_files
 
 # Load singularity image for plink
@@ -69,5 +70,7 @@ module load singularity
 singularity pull docker://and02709/plink_container:slim
 
 sbatch --time 0:10:00 --mem 2GB --array 1-22 --wait -N1 maf_individual.sh ${wd} ${file} ${maf}
+
+rm plink_container_slim.sif
 
 exit 0
