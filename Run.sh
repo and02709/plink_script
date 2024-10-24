@@ -24,8 +24,8 @@ wd=$(pwd)
 getopt -T &>/dev/null
 if [[ $? -ne 4 ]]; then echo "Getopt is too old!" >&2 ; exit 1 ; fi
 
-declare {wd,input_directory,input_file_name,path_to_github_repo,user_x500,use_crossmap,use_genome_harmonizer,use_rfmix,make_report,custom_qc,help}
-OPTS=$(getopt -u -o '' -a --longoptions 'wd:,input_directory:,input_file_name:,path_to_github_repo:,user_x500:,use_crossmap:,use_genome_harmonizer:,use_rfmix:,make_report:,custom_qc:,help' -n "$0" -- "$@")
+declare {wd,file,maf}
+OPTS=$(getopt -u -o '' -a --longoptions 'wd:,file:,maf:' -n "$0" -- "$@")
     # *** Added -o '' ; surrounted the longoptions by ''
 if [[ $? -ne 0 ]] ; then echo "Failed parsing options." >&2 ; exit 1 ; fi
     # *** This has to be right after the OPTS= assignment or $? will be overwritten
