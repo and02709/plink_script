@@ -69,7 +69,7 @@ mkdir maf_files
 module load singularity
 singularity pull docker://and02709/plink_container:slim
 
-sbatch --time 0:10:00 --mem 2GB --array 1-22 --wait -N1 maf_individual.sh ${wd} ${file} ${maf}
+sbatch --time 0:10:00 --mem 2GB --array 1-22 --wait -N1 ${wd}/plink_script/maf_individual.sh ${wd} ${file} ${maf}
 
 rm plink_container_slim.sif
 
