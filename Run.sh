@@ -66,7 +66,7 @@ mkdir maf_files
 
 # Load singularity image for plink
 module load singularity
-
+singularity pull docker://and02709/plink_container:slim
 
 sbatch --time 0:10:00 --mem 2GB --array 1-22 --wait -N1 maf_individual.sh ${wd} ${file} ${maf}
 
