@@ -61,7 +61,12 @@ echo "working directory: $wd"
 echo "input file name: $file"
 echo "minor allele frequency: $maf"
 
+# Make output directory
 mkdir maf_files
+
+# Load singularity image for plink
+module load singularity
+
 
 sbatch --time 0:10:00 --mem 2GB --array 1-22 --wait -N1 maf_individual.sh ${wd} ${file} ${maf}
 
