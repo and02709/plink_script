@@ -16,4 +16,4 @@ CHR=$SLURM_ARRAY_TASK_ID
 
 module load singularity
 
-singularity exec plink.sif plink --bfile $FILE --chr $CHR --maf $MAF --make-bed --out /${WD}/maf_${CHR}
+singularity run plink_container_slim.sif plink --bfile $FILE --chr $CHR --maf $MAF --make-bed --out ${WD}/maf_${CHR}
